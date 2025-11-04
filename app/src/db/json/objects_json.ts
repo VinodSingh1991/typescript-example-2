@@ -1,3 +1,4 @@
+import { objectSlug } from "src/interfaces/object_slug";
 import { ObjectSchema } from "../entity/ObjectSchema";
 
 export class ObjectItemBuilder {
@@ -6,7 +7,7 @@ export class ObjectItemBuilder {
         return new ObjectSchema(
             "1",
             "Financial Calculators",
-            "financial",
+            objectSlug.financial,
             "Calculate loans, EMIs, investments, interest rates, savings, and other finance-related metrics with ease.",
             "AttachMoneyOutlinedIcon",
             "#0070f3",
@@ -18,7 +19,7 @@ export class ObjectItemBuilder {
         return new ObjectSchema(
             "2",
             "Health & Fitness Calculators",
-            "health",
+            objectSlug.health,
             "Track your health using BMI, BMR, calorie, heart rate, and body fat calculators for a healthier lifestyle.",
             "FavoriteBorderOutlinedIcon",
             "#28a745",
@@ -29,7 +30,7 @@ export class ObjectItemBuilder {
         return new ObjectSchema(
             "3",
             "Math & Geometry Calculators",
-            "math",
+            objectSlug.math,
             "Solve equations, geometry problems, percentages, algebra, and trigonometry instantly with math tools.",
             "CalculateOutlinedIcon",
             "#f59e0b",
@@ -41,7 +42,7 @@ export class ObjectItemBuilder {
         return new ObjectSchema(
             "4",
             "Other Useful Calculators",
-            "other",
+            objectSlug.other,
             "Explore a wide range of utility tools like age, date, unit conversion, and time difference calculators.",
             "MoreHorizOutlinedIcon",
             "#8b5cf6",

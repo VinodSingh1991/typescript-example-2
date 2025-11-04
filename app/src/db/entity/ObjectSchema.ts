@@ -1,3 +1,4 @@
+import { CategorySchema } from "./CategorySchema";
 
 export class ObjectSchema {
     objectId: string;
@@ -8,7 +9,8 @@ export class ObjectSchema {
     urlPath?: string;
     orignalSlug?: string;
     slug: string;
-    count: string
+    count: string;
+    categories?: CategorySchema[];
 
     constructor(
         objectId: string,
@@ -28,5 +30,10 @@ export class ObjectSchema {
         this.orignalSlug = slug || "";
         this.slug = slug || "";
         this.count = count || "0";
+        this.categories = [];
+    }
+
+    setCategories(categories: CategorySchema[]) {
+        this.categories = categories;
     }
 }

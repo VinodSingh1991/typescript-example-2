@@ -7,7 +7,7 @@ import { CategoryModule } from './controllers/category/category.module';
 @Module({
   imports: [
     ObjectModule,
-    CategoryModule,
+    CategoryModule
   ],
   controllers: [AppController],
   providers: [AppService],

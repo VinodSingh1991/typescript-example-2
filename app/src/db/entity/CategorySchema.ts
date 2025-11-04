@@ -1,30 +1,20 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
-import { ObjectSchema } from "./ObjectSchema";
+import { NodeSchema } from "./NodeSchema";
 
-@Entity()
 export class CategorySchema {
-    @PrimaryGeneratedColumn()
-    categoryId: number;
+    id: string;
+    name: string;
+    nodes: NodeSchema[];
 
-    @Column()
-    categoryName: string;
+    constructor(
+        id: string,
+        name: string,
+    ) {
+        this.id = id;
+        this.name = name;
+        this.nodes = [];
+    }
 
-    @Column()
-    categoryType: string;
-
-    @Column()
-    categoryDescription: string;
-
-    @Column()
-    categoryIcon: string;
-
-    @Column()
-    categoryColor: string;
-
-    @Column()
-    objectId: number;
-
-    @ManyToOne(() => ObjectSchema)
-    @JoinColumn({ name: 'objectId' })
-    object: ObjectSchema;
+    setNodes(nodes: NodeSchema[]) {
+        this.nodes = nodes;
+    }
 }

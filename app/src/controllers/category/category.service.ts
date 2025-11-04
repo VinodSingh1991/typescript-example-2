@@ -18,15 +18,7 @@ export class CategoryService {
     return await this.repository.createRecord(data);
   }
 
-  async getById(categoryId: number): Promise<CategorySchema | null> {
+  async getById(categoryId: string): Promise<CategorySchema | null> {
     return await this.repository.findRecordById(categoryId);
-  }
-
-  async update(categoryId: number, data: Partial<CategorySchema>): Promise<void> {
-    await this.repository.updateRecordById(categoryId, data);
-  }
-
-  async delete(categoryId: number): Promise<void> {
-    await this.repository.deleteRecordById(categoryId);
   }
 }

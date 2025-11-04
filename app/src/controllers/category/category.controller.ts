@@ -12,23 +12,7 @@ export class CategoryController {
   }
 
   @Get("/:id")
-  async getById(@Param("id") id: number): Promise<CategorySchema | null> {
+  async getById(@Param("id") id: string): Promise<CategorySchema | null> {
     return await this.service.getById(id);
   }
-
-  @Post("/")
-  async create(@Body() data: Partial<CategorySchema>): Promise<CategorySchema> {
-    return await this.service.create(data);
-  }
-
-  @Put("/:id")
-  async update(@Param("id") id: number, @Body() data: Partial<CategorySchema>): Promise<void> {
-    await this.service.update(id, data);
-  }
-
-  @Delete("/:id")
-  async delete(@Param("id") id: number): Promise<void> {
-    await this.service.delete(id);
-  }
-
 }

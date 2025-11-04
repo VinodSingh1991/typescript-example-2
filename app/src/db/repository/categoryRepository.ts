@@ -12,19 +12,11 @@ export class CategoryRepository extends Repository<CategorySchema> {
         return this.save(obj);
     }
     
-    async findRecordById(id: number): Promise<CategorySchema | null> {
-        return this.findOneBy({ categoryId: id });
+    async findRecordById(id: string): Promise<CategorySchema | null> {
+        return this.findOneBy({ id });
     }
 
     async findAllRecord(): Promise<CategorySchema[]> {
         return this.find();
-    }
-
-    async updateRecordById(id: number, data: DeepPartial<CategorySchema>): Promise<void> {
-        await this.update(id, data);
-    }   
-
-    async deleteRecordById(id: number): Promise<void> {
-        await this.delete(id);
     }
 }
